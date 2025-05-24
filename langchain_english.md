@@ -115,14 +115,14 @@ What it solves: simplifies addressing the model. You can set parameters (tempera
 Without LangChain: direct call via HTTP or SDK: you need to form a request dictionary, specify the endpoint/model version, process the JSON response. LangChain encapsulates this routine.
 
 ```python
-# Initialize LLM (OpenAI) - text-davinci-003 model for simplicity.
-from langchain.llms import OpenAI
+# Initialize LLM (OpenAI) - gpt-3.5-turbo-instruct model for simplicity.
+from langchain_community.llms import OpenAI
 
-llm = OpenAI(model_name="text-davinci-003", temperature=0.7)  # temperature determines creativity
+llm = OpenAI(model_name="gpt-3.5-turbo-instruct", temperature=0.7)  # temperature determines creativity
 
 # Call the model with a simple prompt:
 prompt = "Write a short poem about stars"
-response = llm(prompt)
+response = llm.invoke(prompt)
 
 print(response)
 ```
